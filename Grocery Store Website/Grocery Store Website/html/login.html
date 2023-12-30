@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/style1.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script> 
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script> 
+    <script src="../js/database.js"></script>
 </head>
 <body>
     <div>
@@ -15,21 +20,17 @@
                 <div class="underline-title"></div>
               </div>
               <form method="post" class="form">
-                <label for="user-email" style="padding-top:13px">
-                    &nbsp;Email
-                  </label>
+                <label for="user-email" style="padding-top:13px">Email </label>
                 <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" id="email" required />
                 <div class="form-border"></div>
-                <label for="user-password" style="padding-top:22px">&nbsp;Password
-                  </label>
+                <label for="user-password" style="padding-top:22px">Password</label>
                 <input id="user-password" class="form-content" type="password" name="password" id="pass" required />
                 <div class="form-border"></div>
                 <a href="#">
                   <legend id="forgot-pass">Forgot password?</legend>
                 </a>
                 <p id="error" style="color:red"></p>
-                <input id="submit-btn" type="submit" name="submit" value="LOGIN" onclick="loginbut()"/>
-                <!--<a href="#" id="signup">Don't have account yet?</a>-->
+                <button id="login-btn" type="submit" onclick="loginbut()">Login</button>
               </form>
             </div>
           </div>
