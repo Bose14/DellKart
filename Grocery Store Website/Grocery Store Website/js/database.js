@@ -11,22 +11,22 @@
 
 
 // Initialize Firebase
-const app =firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 const auth=firebase.auth();
 const database=firebase.database();
-var database_ref = database.ref(); 
-const storage = firebase.storage();
 
-function loginbut()
-{
-  var email=document.getElementById("email").value;
-  var pass=document.getElementById("pass").value;
-  auth.signInWithEmailAndPassword(email, pass).then(()=>{
-    var user=auth.currentUser;
-    var uid=user.uid;
-    console.log(uid);
+function login(){
+
+  var log_email=document.getElementById("user-email").value;
+  var log_password=document.getElementById("user-password").value;
+
+  auth.signInWithEmailAndPassword(log_email,log_password).then(()=>{
+      var user=auth.currentUser;
+      var uid=user.uid;
+      console.log(uid)
+      window.location.replace("../html/home.html  ")
   })
-  .catch((error)=>
-  {
-    document.getElementById('error').innerHTML=error.message;
-  })}
+  .catch((error)=>{
+      document.getElementById("error2").innerHTML="Invalid Credintials";
+  })
+}

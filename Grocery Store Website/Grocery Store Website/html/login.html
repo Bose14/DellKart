@@ -19,19 +19,17 @@
                 <h2>LOGIN</h2>
                 <div class="underline-title"></div>
               </div>
-              <form method="post" class="form">
-                <label for="user-email" style="padding-top:13px">Email </label>
-                <input id="user-email" class="form-content" type="email" name="email" autocomplete="on" id="email" required />
+            <div>
+                <label for="user-email" style="padding-top:22px">E-mail</label><br>
+                <input type="email" id="user-email" placeholder="Enter Your Email" class="form-content"><br>
+                <div class="form-border"></div><br>
+                <label for="user-password" style="padding-top:22px">Password</label><br>
+                <input type="password" id="user-password" class="form-content" placeholder="Enter Your Password"><br>
                 <div class="form-border"></div>
-                <label for="user-password" style="padding-top:22px">Password</label>
-                <input id="user-password" class="form-content" type="password" name="password" id="pass" required />
-                <div class="form-border"></div>
-                <a href="#">
-                  <legend id="forgot-pass">Forgot password?</legend>
-                </a>
-                <p id="error" style="color:red"></p>
-                <button id="login-btn" type="submit" onclick="loginbut()">Login</button>
-              </form>
+                <p id="error2" style="color:red"></p>
+                <a href="forgot.html"><legend id="forgot-pass">Forgot password?</legend></a>
+                <button type="submit" onclick="login()" id="submit-btn">Login</button>
+            </div>  
             </div>
           </div>
     </div>
