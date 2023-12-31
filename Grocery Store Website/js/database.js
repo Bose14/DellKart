@@ -30,3 +30,41 @@ function login(){
       document.getElementById("error2").innerHTML="Invalid Credintials";
   })
 }
+
+
+//Register
+
+function register(){
+  var email=document.getElementById("email").value
+  var password=document.getElementById("password").value;
+  var uplineid=document.getElementById("uplineid").value;
+  var name=document.getElementById("name").value;
+  var phone=document.getElementById("phone").value;
+ console.log(email);
+ console.log(password);
+
+  auth.createUserWithEmailAndPassword(email, password).then(() =>{
+      var user=auth.currentUser;
+      var uid=user.uid;
+      console.log("uid=",uid)
+      var userRef = firebase.database().ref('users/' + uplineid + '/' + uid);
+      userRef.set({
+      uplineid: uplineid,
+      name: name,
+      phone: phone,
+      email: email,
+      password: password
+    });
+    
+  })
+  .catch((error)=>{
+      document.getElementById("error").innerHTML=error.message;
+
+  })
+  window.location.href("../html/home.html");
+  
+}
+
+
+
+
