@@ -55,7 +55,7 @@ function register(){
       email: email,
       password: password
     });
-    window.location.href = '/Grocery Store Website/html/home.html';
+    window.location.href = '../html/home.html';
   })
   .catch((error)=>{
       document.getElementById("error").innerHTML=error.message;
