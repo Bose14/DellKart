@@ -60,7 +60,7 @@ function register(){
       document.getElementById("error").innerHTML=error.message;
 
   })
-
+}
 
 
 
