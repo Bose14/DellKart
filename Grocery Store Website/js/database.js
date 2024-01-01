@@ -67,6 +67,14 @@ function register(){
 
   })
 }
-
-
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+      var uid = user.uid;
+      firebase.database().ref('users/' + uplineid + '/' + uid).then(function(snapshot){
+      let name=snapshot.val().name;
+      let email=snapshot.val().email;
+      console.log(name);
+      name = document.getElementById("showusername").value=name;
+      name = document.getElementById("showemail").value=email;
+      })}});
 
