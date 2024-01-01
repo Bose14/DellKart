@@ -33,7 +33,6 @@ function login(){
 
 
 //Register
-
 function register(){
   var email=document.getElementById("email").value
   var password=document.getElementById("password").value;
@@ -55,14 +54,12 @@ function register(){
       email: email,
       password: password
     });
-    window.location.href = '../html/home.html';
+    
   })
   .catch((error)=>{
       document.getElementById("error").innerHTML=error.message;
 
   })
-  
-}
 
 
 
