@@ -54,7 +54,13 @@ function register(){
       email: email,
       password: password
     });
-    window.location.href ="../html/home.html";
+    alert("Registered successfully");
+    //window.location.href ="../html/home.html";
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+    document.getElementById("uplineid").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("phone").value = "";
   })
   .catch((error)=>{
       document.getElementById("error").innerHTML=error.message;
