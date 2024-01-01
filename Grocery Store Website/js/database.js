@@ -55,13 +55,12 @@ function register(){
       email: email,
       password: password
     });
-    
+    window.location.href = '/Grocery Store Website/html/home.html';
   })
   .catch((error)=>{
       document.getElementById("error").innerHTML=error.message;
 
   })
-  window.location.href("../html/home.html");
   
 }
 
